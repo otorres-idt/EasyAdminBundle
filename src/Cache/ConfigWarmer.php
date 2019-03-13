@@ -36,7 +36,7 @@ class ConfigWarmer implements CacheWarmerInterface
         try {
             // this forces the full processing of the backend configuration
             $this->configManager->getBackendConfig();
-        } catch ($e) {
+        } catch (\Exception $e) {
             // this occurs for example when the database doesn't exist yet and the
             // project is being installed ('composer install' clears the cache at the end)
             // ignore this error at this point and display an error message later
